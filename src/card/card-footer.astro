@@ -1,11 +1,11 @@
 ---
+import { twMerge } from 'tailwind-merge';
 export type Props = {
   class?: string;
 };
-
 const { class: className = '' } = Astro.props;
 ---
 
-<div class:list={[className, 'justify-between p-6 pt-0 items-center flex']}>
+<div class:list={twMerge(['justify-between p-6 pt-0 items-center flex', className])}>
   <slot />
 </div>

@@ -1,11 +1,11 @@
 ---
+import { twMerge } from 'tailwind-merge';
 export type Props = {
   class?: string;
 };
-
 const { class: className = '' } = Astro.props;
 ---
 
-<div class:list={[className, 'flex-col rounded-xl border shadow bg-card text-card-foreground']}>
+<div class:list={twMerge(['flex-col rounded-xl border shadow bg-card text-card-foreground', className])}>
   <slot />
 </div>

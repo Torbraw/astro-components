@@ -1,10 +1,10 @@
 ---
+import { twMerge } from 'tailwind-merge';
 export type Props = {
   class?: string;
   title: string;
 };
-
 const { class: className = '', title } = Astro.props;
 ---
 
-<h3 class:list={[className, 'font-semibold leading-none tracking-tight']}>{title}</h3>
+<h3 class:list={twMerge(['font-semibold leading-none tracking-tight', className])}>{title}</h3>

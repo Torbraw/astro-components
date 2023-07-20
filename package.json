@@ -4,6 +4,7 @@
   "description": "Library of astro + tailwincss components that I use on my projects, inspired by shadcn/ui.",
   "author": "@Torbraw",
   "type": "module",
+  "main": "index.ts",
   "exports": {
     ".": "./index.ts"
   },
@@ -22,11 +23,18 @@
     "url": "git+https://github.com/Torbraw/astro-components.git"
   },
   "homepage": "https://github.com/Torbraw/astro-components#readme",
-  "scripts": {},
+  "scripts": {
+    "format": "prettier --plugin=prettier-plugin-astro --plugin=prettier-plugin-tailwindcss --write ./src"
+  },
   "devDependencies": {
-    "astro": "^2.9.0"
+    "astro": "^2.9.0",
+    "prettier": "^3.0.0",
+    "prettier-plugin-astro": "^0.11.0",
+    "prettier-plugin-tailwindcss": "^0.4.1",
+    "tailwind-merge": "^1.14.0"
   },
   "peerDependencies": {
-    "astro": "^2.9.0"
+    "astro": "^2.9.0",
+    "tailwind-merge": "^1.14.0"
   }
 }
