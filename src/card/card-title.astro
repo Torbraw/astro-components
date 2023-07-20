@@ -1,0 +1,10 @@
+---
+export type Props = {
+  class?: string;
+  title: string;
+};
+
+const { class: className = '', title } = Astro.props;
+---
+
+<h3 class:list={[className, 'font-semibold leading-none tracking-tight']}>{title}</h3>

@@ -1,0 +1,32 @@
+{
+  "name": "torbraw-astro-components",
+  "version": "0.0.1",
+  "description": "Library of astro + tailwincss components that I use on my projects, inspired by shadcn/ui.",
+  "author": "@Torbraw",
+  "type": "module",
+  "exports": {
+    ".": "./index.ts"
+  },
+  "files": [
+    "src",
+    "index.ts"
+  ],
+  "keywords": [
+    "astro-component",
+    "astro",
+    "ui",
+    "tailwindcss"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Torbraw/astro-components.git"
+  },
+  "homepage": "https://github.com/Torbraw/astro-components#readme",
+  "scripts": {},
+  "devDependencies": {
+    "astro": "^2.9.0"
+  },
+  "peerDependencies": {
+    "astro": "^2.9.0"
+  }
+}
