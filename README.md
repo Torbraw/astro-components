@@ -5,12 +5,9 @@ This is not mean to be a complete port of shadcn/ui, I only port the components 
 
 ## How to use
 
-You are free to use those components if you want, you have two ways of doing so:
+You are free to use those components if you want, you simply need to copy and paste the components you want from the `src` directory and paste them into your own project.
 
-- Copy and paste the components you want from the `src` directory and paste them into your own project (`preferred method` since intellisense for component property does not work on package component).
-- Install the package from npm with `npm i torbraw-astro-components` and import them like so: `import { Card } from 'torbraw-astro-components';`
-
-For both of those methods, you will need to add `applyBaseStyles: false` to your tailwind ingreration in your `astro.config.mjs` file. You will also need those dependencies:
+You will need to add `applyBaseStyles: false` to your tailwind ingreration in your `astro.config.mjs` file and those dependencies:
 
 ```bash
 npm i astro @astrojs/tailwind tailwind-merge
