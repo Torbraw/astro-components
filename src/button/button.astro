@@ -2,7 +2,7 @@
 import { twMerge } from 'tailwind-merge';
 type Props = {
   class?: string;
-  variant?: 'primary' | 'secondary' | 'destructive' | 'outline';
+  variant?: 'primary' | 'secondary' | 'destructive' | 'outline' | 'success';
   size?: 'sm' | 'md' | 'lg' | 'icon';
   'class:list'?: string;
 };
@@ -12,6 +12,7 @@ const variantClasses = {
   primary: 'bg-primary text-primary-foreground shadow hover:bg-primary/90',
   secondary: 'bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80',
   destructive: 'bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90',
+  success: 'bg-success text-success-foreground shadow-sm hover:bg-success/90',
   outline: 'border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground',
 } as const;
 

@@ -30,17 +30,17 @@ You have a README.md file in each component directory that explains how to use t
     --background: 0 0% 100%;
     --foreground: 222.2 47.4% 11.2%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-
     --primary: 222.2 47.4% 11.2%;
     --primary-foreground: 210 40% 98%;
 
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
 
     --card: 0 0% 100%;
     --card-foreground: 222.2 47.4% 11.2%;
@@ -49,8 +49,10 @@ You have a README.md file in each component directory that explains how to use t
     --accent-foreground: 222.2 47.4% 11.2%;
 
     --destructive: 0 100% 50%;
+    --destructive-foreground: 222.2 47.4% 11.2%;
 
     --success: 120 100% 50%;
+    --success-foreground: 222.2 47.4% 11.2%;
 
     --ring: 215 20.2% 65.1%;
   }
@@ -59,17 +61,17 @@ You have a README.md file in each component directory that explains how to use t
     --background: 224 71% 4%;
     --foreground: 213 31% 91%;
 
-    --muted: 223 47% 11%;
-    --muted-foreground: 215.4 16.3% 56.9%;
-
-    --border: 216 34% 17%;
-    --input: 216 34% 17%;
-
     --primary: 210 40% 98%;
     --primary-foreground: 222.2 47.4% 1.2%;
 
     --secondary: 222.2 47.4% 11.2%;
     --secondary-foreground: 210 40% 98%;
+
+    --muted: 223 47% 11%;
+    --muted-foreground: 215.4 16.3% 56.9%;
+
+    --border: 216 34% 17%;
+    --input: 216 34% 17%;
 
     --card: 224 71% 4%;
     --card-foreground: 213 31% 91%;
@@ -78,8 +80,10 @@ You have a README.md file in each component directory that explains how to use t
     --accent-foreground: 210 40% 98%;
 
     --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
 
-    --success: 120, 90%, 35%;
+    --success: 120 90% 35%;
+    --success-foreground: 210 40% 98%;
 
     --ring: 216 34% 17%;
   }
@@ -127,9 +131,11 @@ module.exports = {
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))",
         },
         success: {
           DEFAULT: "hsl(var(--success))",
+          foreground: "hsl(var(--success-foreground))",
         },
         muted: {
           DEFAULT: "hsl(var(--muted))",
