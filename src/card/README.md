@@ -3,8 +3,8 @@
 ```html
 <Card>
   <CardHeader>
-    <CardTitle title="Card Title" />
-    <CardDescription desc="Card description" />
+    <CardTitle>Card Title</CardTitle>
+    <CardDescription>Card description</CardDescription>
   </CardHeader>
   <CardContent>
     <p>Card Content</p>
