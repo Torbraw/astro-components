@@ -2,7 +2,7 @@
 import { twMerge } from 'tailwind-merge';
 export type Props = {
   class?: string;
-  variant?: 'primary' | 'secondary' | 'destructive' | 'outline' | 'accent';
+  variant?: 'primary' | 'secondary' | 'destructive' | 'outline';
   size?: 'sm' | 'md' | 'lg' | 'icon';
 };
 const { class: className = '', variant = 'primary', size = 'md' } = Astro.props;
@@ -12,7 +12,6 @@ const variantClasses = {
   secondary: 'bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80',
   destructive: 'bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90',
   outline: 'border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground',
-  accent: 'bg-accent text-accent-foreground shadow-sm hover:bg-accent/90',
 } as const;
 
 const sizeClasses = {

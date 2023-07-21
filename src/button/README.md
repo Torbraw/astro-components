@@ -12,7 +12,7 @@
 <Button variant="secondary">Button</Button>
 ```
 
-Available variant: primary, secondary, accent, destructive, outline
+Available variant: primary, secondary, destructive, outline
 
 ## Specify size
 
