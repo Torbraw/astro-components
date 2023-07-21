@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/Torbraw/astro-components#readme",
   "scripts": {
-    "format": "prettier --plugin=prettier-plugin-astro --plugin=prettier-plugin-tailwindcss --write ./src"
+    "format": "prettier --plugin=prettier-plugin-astro --plugin=prettier-plugin-tailwindcss --write ./src index.ts"
   },
   "devDependencies": {
     "astro": "^2.9.0",

@@ -5,4 +5,24 @@ import CardDescription from './src/card/card-description.astro';
 import CardContent from './src/card/card-content.astro';
 import CardFooter from './src/card/card-footer.astro';
 
-export { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter };
+import Table from './src/table/table.astro';
+import TableHeader from './src/table/table-header.astro';
+import TableHead from './src/table/table-head.astro';
+import TableBody from './src/table/table-body.astro';
+import TableRow from './src/table/table-row.astro';
+import TableCell from './src/table/table-cell.astro';
+
+export {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+  CardFooter,
+  Table,
+  TableHeader,
+  TableHead,
+  TableBody,
+  TableRow,
+  TableCell,
+};
