@@ -18,6 +18,8 @@ npm i -D tailwindcss
 
 Finally, you will need a tailwind config file and a global css file that contains the variables in the exemple below.
 
+You have a README.md file in each component directory that explains how to use them.
+
 ## Global CSS
 
 ```css
