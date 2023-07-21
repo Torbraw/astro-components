@@ -1,4 +1,4 @@
-# astro-components
+# torbraw-astro-components
 
 Library of astro + tailwincss components that I use on my projects, heavily inspired by [shadcn/ui](https://ui.shadcn.com).  
 This is not mean to be a complete port of shadcn/ui, I only port the components I need for my projects and I sometimes tweak them if I need to.
