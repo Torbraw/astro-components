@@ -14,7 +14,7 @@ npm i astro @astrojs/tailwind tailwind-merge
 npm i -D tailwindcss
 ```
 
-Finally, you will need a tailwind config file and a global css file that contains the variables in the exemple below.
+Finally, you will need a tailwind config file and a global css file that contains the variables in the exemple below. For informations about each variable, you can check the [shadcn/ui](https://ui.shadcn.com/docs/theming#list-of-variables) theming documentation.
 
 You have a README.md file in each component directory that explains how to use them.
 
