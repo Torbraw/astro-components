@@ -45,6 +45,9 @@ You have a README.md file in each component directory that explains how to use t
     --card: 0 0% 100%;
     --card-foreground: 222.2 47.4% 11.2%;
 
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 47.4% 11.2%;
+
     --accent: 210 40% 96.1%;
     --accent-foreground: 222.2 47.4% 11.2%;
 
@@ -75,6 +78,9 @@ You have a README.md file in each component directory that explains how to use t
 
     --card: 224 71% 4%;
     --card-foreground: 213 31% 91%;
+    
+    --popover: 224 71% 4%;
+    --popover-foreground: 213 31% 91%;
 
     --accent: 216 34% 17%;
     --accent-foreground: 210 40% 98%;
@@ -128,6 +134,10 @@ module.exports = {
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
+        },
+        popover: {
+          DEFAULT: "hsl(var(--popover))",
+          foreground: "hsl(var(--popover-foreground))",
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
