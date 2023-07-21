@@ -2,10 +2,11 @@
 import { twMerge } from 'tailwind-merge';
 export type Props = {
   class?: string;
+  'class:list'?: string;
 };
-const { class: className = '' } = Astro.props;
+const { class: className = '', 'class:list': classList = '' } = Astro.props;
 ---
 
-<th class:list={twMerge(['h-10 px-2 text-left align-middle font-medium text-muted-foreground', className])}>
+<th class:list={twMerge(['h-10 px-2 text-left align-middle font-medium text-muted-foreground', className, classList])}>
   <slot />
 </th>
