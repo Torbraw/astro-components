@@ -1,7 +1,22 @@
 # astro-components
 
 Library of astro + tailwincss components that I use on my projects, heavily inspired by [ShadcnUI](https://ui.shadcn.com).  
-They are free to use if you want to, just refer to the Global CSS and Tailwind Config sections to know which variables you need to have set up in your project. You will also need to add `applyBaseStyles: false` to the tailwind integration in your astro config.
+
+## How to use
+
+You are free to use those components if you want, you have two ways of doing so:
+
+- Copy and paste the components you want from the `src` directory and paste them into your own project.
+- Install the package from npm with `npm i torbraw-astro-components`
+
+For both of those methods, you will need to add `applyBaseStyles: false` to your tailwind ingreration in your `astro.config.mjs` file. You will also need those dependencies:
+
+```bash
+npm i astro @astrojs/tailwind tailwind-merge
+npm i -D tailwindcss
+```
+
+Finally, you will need a tailwind config file and a global css file that contains the variables in the exemple below.
 
 ## Global CSS
 
@@ -87,7 +102,11 @@ They are free to use if you want to, just refer to the Global CSS and Tailwind C
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ["class"],
-  content: ['./src/**/*.{astro,html,js,jsx,md,mdx,ts,tsx,vue}'],
+  content: [
+    './src/**/*.{astro,html,js,jsx,md,mdx,ts,tsx,vue}'
+    /** Needed when using this as a NPM package for the tailwind JIT to work */
+    './node_modules/torbraw-astro-components/**/*.astro'
+    ],
   theme: {
     extend: {
       colors: {
