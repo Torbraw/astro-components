@@ -6,6 +6,8 @@
 <Button>Button</Button>
 ```
 
+Defaullt is primary variant and md size
+
 ## Specify variant
 
 ```html
