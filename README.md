@@ -104,8 +104,6 @@ module.exports = {
   darkMode: ["class"],
   content: [
     './src/**/*.{astro,html,js,jsx,md,mdx,ts,tsx,vue}'
-    /** Needed when using this as a NPM package for the tailwind JIT to work */
-    './node_modules/torbraw-astro-components/**/*.astro'
     ],
   theme: {
     extend: {
