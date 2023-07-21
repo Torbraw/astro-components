@@ -7,6 +7,6 @@ type Props = {
 const { class: className = '', 'class:list': classList = '' } = Astro.props;
 ---
 
-<div class:list={twMerge(['flex-col rounded-xl border shadow bg-card text-card-foreground', className, classList])}>
+<div class:list={twMerge(['rounded-xl border shadow bg-card text-card-foreground', className, classList])}>
   <slot />
 </div>
