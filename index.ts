@@ -12,6 +12,8 @@ import TableBody from './src/table/table-body.astro';
 import TableRow from './src/table/table-row.astro';
 import TableCell from './src/table/table-cell.astro';
 
+import Button from './src/button/button.astro';
+
 export {
   Card,
   CardHeader,
@@ -25,4 +27,5 @@ export {
   TableBody,
   TableRow,
   TableCell,
+  Button
 };
