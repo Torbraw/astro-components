@@ -7,6 +7,6 @@ type Props = {
 const { class: className = '', 'class:list': classList = '' } = Astro.props;
 ---
 
-<h3 class:list={twMerge(['font-semibold leading-none tracking-tight', className, classList])}>
+<h3 class={twMerge('font-semibold leading-none tracking-tight', className, classList)}>
   <slot />
 </h3>

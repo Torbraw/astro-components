@@ -7,6 +7,6 @@ type Props = {
 const { class: className = '', 'class:list': classList = '' } = Astro.props;
 ---
 
-<th class:list={twMerge(['h-10 px-2 text-left align-middle font-medium text-muted-foreground', className, classList])}>
+<th class={twMerge('h-10 px-2 text-left align-middle font-medium text-muted-foreground', className, classList)}>
   <slot />
 </th>

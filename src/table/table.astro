@@ -8,7 +8,7 @@ const { class: className = '', 'class:list': classList = '' } = Astro.props;
 ---
 
 <div class="w-full overflow-auto">
-  <table class:list={twMerge(['w-full text-sm', className, classList])}>
+  <table class={twMerge('w-full text-sm', className, classList)}>
     <slot />
   </table>
 </div>

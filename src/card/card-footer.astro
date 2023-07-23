@@ -7,6 +7,6 @@ type Props = {
 const { class: className = '', 'class:list': classList = '' } = Astro.props;
 ---
 
-<div class:list={twMerge(['justify-between p-6 pt-0 items-center flex', className, classList])}>
+<div class={twMerge('justify-between p-6 pt-0 items-center flex', className, classList)}>
   <slot />
 </div>
