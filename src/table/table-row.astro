@@ -7,6 +7,12 @@ type Props = {
 const { class: className = '', 'class:list': classList = '' } = Astro.props;
 ---
 
-<tr class:list={twMerge(['border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted', className, classList])}>
+<tr
+  class:list={twMerge([
+    'border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted',
+    className,
+    classList,
+  ])}
+>
   <slot />
 </tr>
