@@ -4,7 +4,7 @@ type Props = {
   class?: string;
   variant?: 'primary' | 'secondary' | 'destructive' | 'outline' | 'success';
   size?: 'sm' | 'md' | 'lg' | 'icon';
-  'class:list'?: string;
+  'class:list'?: string | string[];
 };
 const { class: className = '', variant = 'primary', size = 'md', 'class:list': classList = '' } = Astro.props;
 

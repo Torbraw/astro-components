@@ -2,7 +2,7 @@
 import { twMerge } from 'tailwind-merge';
 type Props = {
   class?: string;
-  'class:list'?: string;
+  'class:list'?: string | string[];
 };
 const { class: className = '', 'class:list': classList = '' } = Astro.props;
 ---
