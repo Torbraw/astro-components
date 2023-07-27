@@ -10,8 +10,8 @@ You are free to use those components if you want, you simply need to copy and pa
 You will need to add `applyBaseStyles: false` to your tailwind ingreration in your `astro.config.mjs` file and those dependencies:
 
 ```bash
-npm i astro @astrojs/tailwind tailwind-merge
-npm i -D tailwindcss
+npm i @astrojs/tailwind tailwind-merge
+npm i -D tailwindcss tailwindcss-animate
 ```
 
 Finally, you will need a tailwind config file and a global css file that contains the variables in the exemple below. For informations about each variable, you can check the [shadcn/ui](https://ui.shadcn.com/docs/theming#list-of-variables) theming documentation.
@@ -109,6 +109,8 @@ You have a README.md file in each component directory that explains how to use t
 ## Tailwind Config
 
 ```js
+import tailwindcssAnimate from "tailwindcss-animate";
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ["class"],
@@ -157,6 +159,7 @@ module.exports = {
         },
       }
     },
-  }
+  },
+  plugins: [tailwindcssAnimate],
 }
 ```
