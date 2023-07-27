@@ -1,6 +1,16 @@
 # Dialog
 
-```html
+```jsx
+---
+import Dialog from '@/components/ui/dialog/dialog.astro';
+import DialogHeader from '@/components/ui/dialog/dialog-header.astro';
+import DialogTitle from '@/components/ui/dialog/dialog-title.astro';
+import DialogDescription from '@/components/ui/dialog/dialog-description.astro';
+import DialogFooter from '@/components/ui/dialog/dialog-footer.astro';
+import DialogTrigger from '@/components/ui/dialog/dialog-trigger.astro';
+import Button from '@/components/ui/button/button.astro';
+---
+
 <Dialog id="dialog">
   <DialogHeader>
     <DialogTitle>Title</DialogTitle>

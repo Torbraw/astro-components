@@ -1,7 +1,7 @@
 {
-  "name": "torbraw-astro-components",
-  "version": "0.0.1",
-  "description": "Library of astro + tailwincss components that I use on my projects, inspired by shadcn/ui.",
+  "name": "astro-components",
+  "version": "1.0.0",
+  "description": "Library of astro + tailwindcss components that I use on my projects, inspired by shadcn/ui.",
   "author": "@Torbraw",
   "repository": {
     "type": "git",

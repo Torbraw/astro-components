@@ -5,7 +5,8 @@ This is not mean to be a complete port of shadcn/ui, I only port the components 
 
 ## How to use
 
-You are free to use those components if you want, you simply need to copy and paste the components you want from the `src` directory and paste them into your own project.
+You are free to use those components if you want, you simply need to copy and paste the components you want from the `src` directory and paste them into your own project.  
+You have a README.md file in each component directory that explains how to use them.
 
 You will need to add `applyBaseStyles: false` to your tailwind ingreration in your `astro.config.mjs` file and those dependencies:
 
@@ -16,7 +17,18 @@ npm i -D tailwindcss tailwindcss-animate
 
 Finally, you will need a tailwind config file and a global css file that contains the variables in the exemple below. For informations about each variable, you can check the [shadcn/ui](https://ui.shadcn.com/docs/theming#list-of-variables) theming documentation.
 
-You have a README.md file in each component directory that explains how to use them.
+I also use the @ alias in my `tsconfig.json` file to import my components, I recommend you to do the same and put your components in a `components/ui` directory.
+
+```json
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"]
+    }
+  }
+}
+```
 
 ## Global CSS
 

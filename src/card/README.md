@@ -1,6 +1,15 @@
 # Card
 
-```html
+```jsx
+---
+import Card from '@/components/ui/card/card.astro';
+import CardHeader from '@/components/ui/card/card-header.astro';
+import CardTitle from '@/components/ui/card/card-title.astro';
+import CardDescription from '@/components/ui/card/card-description.astro';
+import CardContent from '@/components/ui/card/card-content.astro';
+import CardFooter from '@/components/ui/card/card-footer.astro';
+---
+
 <Card>
   <CardHeader>
     <CardTitle>Card Title</CardTitle>
@@ -10,7 +19,7 @@
     <p>Card Content</p>
   </CardContent>
   <CardFooter>
-    <p>Card Footer</p>
+    <Button>Button</Button>
   </CardFooter>
 </Card>
 ```

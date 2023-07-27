@@ -1,6 +1,10 @@
 # Theme toggle
 
-```html
+```jsx
+---
+import Button from '@/components/ui/theme-toggle/theme-toggle.astro';
+---
+
 <ThemeToggle />
 ```
 
