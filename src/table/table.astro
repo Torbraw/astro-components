@@ -1,14 +1,12 @@
 ---
 import { twMerge } from 'tailwind-merge';
-type Props = {
-  class?: string;
-  'class:list'?: string | string[];
-};
-const { class: className = '', 'class:list': classList = '' } = Astro.props;
+
+type Props = JSX.IntrinsicElements['table'];
+const { class: className = '' } = Astro.props;
 ---
 
 <div class="w-full overflow-auto">
-  <table class={twMerge('w-full text-sm', className, classList)}>
+  <table class={twMerge('w-full text-sm', className)} {...Astro.props}>
     <slot />
   </table>
 </div>

@@ -15,22 +15,11 @@ npm i @astrojs/tailwind tailwind-merge
 npm i -D tailwindcss tailwindcss-animate
 ```
 
-Finally, you will need a tailwind config file and a global css file that contains the variables in the exemple below. For informations about each variable, you can check the [shadcn/ui](https://ui.shadcn.com/docs/theming#list-of-variables) theming documentation.
+You will also need all the files in the sections below.
 
-I also use the @ alias in my `tsconfig.json` file to import my components, I recommend you to do the same and put your components in a `components/ui` directory.
+## Global CSS & Tailwind Config
 
-```json
-{
-  "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["./*"]
-    }
-  }
-}
-```
-
-## Global CSS
+You will need a tailwind config file and a global css file that contains the variables in the exemple below. For informations about each variable, you can check the [shadcn/ui](https://ui.shadcn.com/docs/theming#list-of-variables) theming documentation.
 
 ```css
 @tailwind base;
@@ -118,8 +107,6 @@ I also use the @ alias in my `tsconfig.json` file to import my components, I rec
 }
 ```
 
-## Tailwind Config
-
 ```js
 import tailwindcssAnimate from "tailwindcss-animate";
 
@@ -173,5 +160,36 @@ module.exports = {
     },
   },
   plugins: [tailwindcssAnimate],
+}
+```
+
+## Tsconfig
+
+You will need to have the following in your  `tsconfig.json` file to import components, put your components in a `components/ui` directory.
+
+```json
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"]
+    }
+  }
+}
+```
+
+## env.d.ts
+
+You will need to have the following in your `env.d.ts` file to be able to import the JSX types from `astro-jsx`.
+
+```ts
+import 'astro/astro-jsx';
+
+declare global {
+  namespace JSX {
+    export type Element = HTMLElement;
+    // type Element = astroHTML.JSX.Element // We want to use this, but it is defined as any.
+    export type IntrinsicElements = astroHTML.JSX.IntrinsicElements;
+  }
 }
 ```

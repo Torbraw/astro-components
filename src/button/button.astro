@@ -1,12 +1,11 @@
 ---
 import { twMerge } from 'tailwind-merge';
-type Props = {
-  class?: string;
+
+type Props = JSX.IntrinsicElements['button'] & {
   variant?: 'primary' | 'secondary' | 'destructive' | 'outline' | 'success';
   size?: 'sm' | 'md' | 'lg' | 'icon';
-  'class:list'?: string | string[];
 };
-const { class: className = '', variant = 'primary', size = 'md', 'class:list': classList = '' } = Astro.props;
+const { class: className = '', variant = 'primary', size = 'md' } = Astro.props;
 
 const variantClasses = {
   primary: 'bg-primary text-primary-foreground shadow hover:bg-primary/90',
@@ -28,10 +27,10 @@ const sizeClasses = {
   class={twMerge(
     'inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50',
     className,
-    classList,
     variantClasses[variant],
     sizeClasses[size],
   )}
+  {...Astro.props}
 >
   <slot />
 </button>

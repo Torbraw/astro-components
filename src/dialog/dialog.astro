@@ -1,12 +1,10 @@
 ---
 import { twMerge } from 'tailwind-merge';
-type Props = {
-  class?: string;
-  'class:list'?: string | string[];
+
+type Props = JSX.IntrinsicElements['div'] & {
   id: string;
 };
-
-const { class: className = '', 'class:list': classList = '', id } = Astro.props;
+const { class: className = '', id } = Astro.props;
 ---
 
 <astro-dialog data-dialog-id={id}>
@@ -15,11 +13,8 @@ const { class: className = '', 'class:list': classList = '', id } = Astro.props;
     class="backdrop:bg-background/80 w-full max-w-lg backdrop:backdrop-blur-sm open:backdrop:animate-in open:backdrop:fade-out-0 bg-transparent m-0 left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] duration-200 open:animate-in data-[closed=true]:animate-out data-[closed=true]:fade-out-0 open:fade-in-0 data-[closed=true]:zoom-out-95 open:zoom-in-95 data-[closed=true]:slide-out-to-left-1/2 data-[closed=true]:slide-out-to-top-[48%] open:slide-in-from-left-1/2 open:slide-in-from-top-[48%]"
   >
     <div
-      class={twMerge(
-        'relative text-primary grid gap-4 border bg-background p-6 shadow-lg sm:rounded-lg',
-        className,
-        classList,
-      )}
+      class={twMerge('relative text-primary grid gap-4 border bg-background p-6 shadow-lg sm:rounded-lg', className)}
+      {...Astro.props}
     >
       <slot />
       <button

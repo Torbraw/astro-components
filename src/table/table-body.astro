@@ -1,12 +1,10 @@
 ---
 import { twMerge } from 'tailwind-merge';
-type Props = {
-  class?: string;
-  'class:list'?: string | string[];
-};
-const { class: className = '', 'class:list': classList = '' } = Astro.props;
+
+type Props = JSX.IntrinsicElements['tbody'];
+const { class: className = '' } = Astro.props;
 ---
 
-<tbody class={twMerge('[&_tr:last-child]:border-0', className, classList)}>
+<tbody class={twMerge('[&_tr:last-child]:border-0', className)} {...Astro.props}>
   <slot />
 </tbody>

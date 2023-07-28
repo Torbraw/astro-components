@@ -1,14 +1,13 @@
 ---
 import { twMerge } from 'tailwind-merge';
-type Props = {
-  class?: string;
-  'class:list'?: string | string[];
-};
-const { class: className = '', 'class:list': classList = '' } = Astro.props;
+
+type Props = JSX.IntrinsicElements['tr'];
+const { class: className = '' } = Astro.props;
 ---
 
 <tr
-  class={twMerge('border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted', className, classList)}
+  class={twMerge('border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted', className)}
+  {...Astro.props}
 >
   <slot />
 </tr>
