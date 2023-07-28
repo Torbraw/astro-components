@@ -3,6 +3,7 @@
 ```jsx
 ---
 import Dialog from '@/components/ui/dialog/dialog.astro';
+import DialogContent from '@/components/ui/dialog/dialog-content.astro';
 import DialogHeader from '@/components/ui/dialog/dialog-header.astro';
 import DialogTitle from '@/components/ui/dialog/dialog-title.astro';
 import DialogDescription from '@/components/ui/dialog/dialog-description.astro';
@@ -11,22 +12,24 @@ import DialogTrigger from '@/components/ui/dialog/dialog-trigger.astro';
 import Button from '@/components/ui/button/button.astro';
 ---
 
-<Dialog id="dialog">
-  <DialogHeader>
-    <DialogTitle>Title</DialogTitle>
-    <DialogDescription>Description</DialogDescription>
-  </DialogHeader>
-  <div>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-    </p>
-  </div>
-  <DialogFooter>
-    <Button>Close</Button>
-  </DialogFooter>
+<Dialog dialogId="dialog">
+  <DialogContent dialogId="dialog">
+    <DialogHeader>
+      <DialogTitle>Title</DialogTitle>
+      <DialogDescription>Description</DialogDescription>
+    </DialogHeader>
+    <div>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      </p>
+    </div>
+    <DialogFooter>
+      <Button>Close</Button>
+    </DialogFooter>
+  </DialogContent>
 </Dialog>
 
-<DialogTrigger id="dialog">
+<DialogTrigger dialogId="dialog">
   <Button>Open dialog</Button>
 </DialogTrigger>
 ```
