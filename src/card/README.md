@@ -8,18 +8,29 @@ import CardTitle from '@/components/ui/card/card-title.astro';
 import CardDescription from '@/components/ui/card/card-description.astro';
 import CardContent from '@/components/ui/card/card-content.astro';
 import CardFooter from '@/components/ui/card/card-footer.astro';
+import Label from '@/components/ui/label/label.astro';
+import Input from '@/components/ui/input/input.astro';
+import Button from '@/components/ui/button/button.astro';
 ---
 
-<Card>
+<Card class="w-[350px]">
   <CardHeader>
-    <CardTitle>Card Title</CardTitle>
-    <CardDescription>Card description</CardDescription>
+    <CardTitle>Create project</CardTitle>
+    <CardDescription>Deploy your new project in one-click.</CardDescription>
   </CardHeader>
   <CardContent>
-    <p>Card Content</p>
+    <form>
+      <div class="grid w-full items-center gap-4">
+        <div class="flex flex-col space-y-1.5">
+          <Label for="name">Name</Label>
+          <Input id="name" placeholder="Name of your project" />
+        </div>
+      </div>
+    </form>
   </CardContent>
-  <CardFooter>
-    <Button>Button</Button>
+  <CardFooter class="flex justify-between">
+    <Button variant="outline">Cancel</Button>
+    <Button>Deploy</Button>
   </CardFooter>
 </Card>
 ```
