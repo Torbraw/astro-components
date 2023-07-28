@@ -1,0 +1,16 @@
+---
+import { twMerge } from 'tailwind-merge';
+
+type Props = JSX.IntrinsicElements['label'];
+const { class: className = '' } = Astro.props;
+---
+
+<label
+  class={twMerge(
+    'text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70',
+    className,
+  )}
+  {...Astro.props}
+>
+  <slot />
+</label>
