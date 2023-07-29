@@ -13,6 +13,9 @@ You will need to add `applyBaseStyles: false` to your tailwind ingreration in yo
 ```bash
 npm i @astrojs/tailwind tailwind-merge
 npm i -D tailwindcss tailwindcss-animate
+
+# If using solidjs
+npm i solid-js @astrojs/solid-js
 ```
 
 You will also need all the files in the sections below.
