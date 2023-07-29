@@ -1,7 +1,8 @@
 ---
 import { twMerge } from 'tailwind-merge';
+import type { HTMLAttributes } from 'astro/types';
 
-type Props = JSX.IntrinsicElements['button'] & {
+type Props = HTMLAttributes<'button'> & {
   variant?: 'primary' | 'secondary' | 'destructive' | 'outline' | 'success';
   size?: 'sm' | 'md' | 'lg' | 'icon';
 };

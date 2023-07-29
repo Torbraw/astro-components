@@ -181,19 +181,3 @@ You will need to have the following in your  `tsconfig.json` file to import comp
   }
 }
 ```
-
-## env.d.ts
-
-You will need to have the following in your `env.d.ts` file to be able to import the JSX types from `astro-jsx`.
-
-```ts
-import 'astro/astro-jsx';
-
-declare global {
-  namespace JSX {
-    export type Element = HTMLElement;
-    // type Element = astroHTML.JSX.Element // We want to use this, but it is defined as any.
-    export type IntrinsicElements = astroHTML.JSX.IntrinsicElements;
-  }
-}
-```

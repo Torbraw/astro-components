@@ -1,7 +1,8 @@
 ---
 import { twMerge } from 'tailwind-merge';
+import type { HTMLAttributes } from 'astro/types';
 
-type Props = JSX.IntrinsicElements['dialog'] & {
+type Props = HTMLAttributes<'dialog'> & {
   dialogId: string;
 };
 const { class: className = '', dialogId } = Astro.props;

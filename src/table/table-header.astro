@@ -1,7 +1,8 @@
 ---
 import { twMerge } from 'tailwind-merge';
+import type { HTMLAttributes } from 'astro/types';
 
-type Props = JSX.IntrinsicElements['thead'];
+type Props = HTMLAttributes<'thead'>;
 const { class: className = '' } = Astro.props;
 ---
 
