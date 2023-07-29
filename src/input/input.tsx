@@ -2,9 +2,7 @@ import type { Component, ComponentProps } from 'solid-js';
 import { splitProps } from 'solid-js';
 import { twMerge } from 'tailwind-merge';
 
-type Props = ComponentProps<'input'>;
-
-export const Input: Component<Props> = (props) => {
+export const Input: Component<ComponentProps<'input'>> = (props) => {
   const [local, rest] = splitProps(props, ['class']);
   const className = local.class ?? '';
 

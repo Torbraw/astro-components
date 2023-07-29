@@ -2,9 +2,7 @@ import type { ParentComponent, ComponentProps } from 'solid-js';
 import { splitProps } from 'solid-js';
 import { twMerge } from 'tailwind-merge';
 
-type Props = ComponentProps<'label'>;
-
-export const Label: ParentComponent<Props> = (props) => {
+export const Label: ParentComponent<ComponentProps<'label'>> = (props) => {
   const [local, rest] = splitProps(props, ['class']);
   const className = local.class ?? '';
 

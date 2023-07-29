@@ -11,6 +11,12 @@ import DialogFooter from '@/components/ui/dialog/dialog-footer.astro';
 import DialogTrigger from '@/components/ui/dialog/dialog-trigger.astro';
 import Label from '@/components/ui/label/label.astro';
 import Button from '@/components/ui/button/button.astro';
+
+/**
+ * For solidjs, only DialogHeader, DialogTitle, DialogDescription and DialogFooter are available,
+ * the logic of showing/hiding the dialog is handled by the Astro components.
+ */
+import { DialogHeader, DialogTitle, DialogDescription, DialogFooter } from '@/components/ui/dialog/dialog';
 ---
 
 <Dialog dialogId="dialog">
