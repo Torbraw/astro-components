@@ -1,6 +1,6 @@
-# torbraw-astro-components
+# ui-components
 
-Library of astro + tailwincss components that I use on my projects, heavily inspired by [shadcn/ui](https://ui.shadcn.com).  
+Library of astro & solidjs + tailwincss components that I use on my projects, heavily inspired by [shadcn/ui](https://ui.shadcn.com).  
 This is not mean to be a complete port of shadcn/ui, I only port the components I need for my projects and I sometimes tweak them if I need to.
 
 ## How to use
@@ -169,7 +169,7 @@ module.exports = {
 
 ## Tsconfig
 
-You will need to have the following in your  `tsconfig.json` file to import components, put your components in a `components/ui` directory.
+You will need to have the following in your `tsconfig.json` file to import components, put your components in a `components/ui` directory.
 
 ```json
 {

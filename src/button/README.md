@@ -4,7 +4,8 @@
 
 ```jsx
 ---
-import Button from '@/components/ui/button/button.astro';
+import Button from '@/components/ui/button/button.astro'; // astro
+import { Button } from '@/components/ui/button/button'; // solidjs
 ---
 
 <Button>Button</Button>

@@ -1,7 +1,7 @@
 {
-  "name": "astro-components",
+  "name": "ui-components",
   "version": "1.0.0",
-  "description": "Library of astro + tailwindcss components that I use on my projects, inspired by shadcn/ui.",
+  "description": "Library of astro & solidjs + tailwindcss components that I use on my projects, inspired by shadcn/ui.",
   "author": "@Torbraw",
   "repository": {
     "type": "git",
@@ -16,6 +16,7 @@
     "prettier": "^3.0.0",
     "prettier-plugin-astro": "^0.11.0",
     "prettier-plugin-tailwindcss": "^0.4.1",
+    "solid-js": "^1.7.8",
     "tailwind-merge": "^1.14.0",
     "tailwindcss-animate": "^1.0.6"
   }

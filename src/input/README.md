@@ -4,7 +4,8 @@
 
 ```jsx
 ---
-import Input from '@/components/ui/input/input.astro';
+import Input from '@/components/ui/input/input.astro'; // astro
+import { Input } from '@/components/ui/input/input'; // solidjs
 ---
 
 <Input type="text" placeholder="Email" id="email" />
