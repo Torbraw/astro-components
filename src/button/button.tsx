@@ -1,5 +1,4 @@
-import type { ParentComponent, ComponentProps } from 'solid-js';
-import { splitProps } from 'solid-js';
+import { type ParentComponent, type ComponentProps, splitProps } from 'solid-js';
 import { twMerge } from 'tailwind-merge';
 
 type Props = ComponentProps<'button'> & {
@@ -23,17 +22,16 @@ const sizeClasses = {
 } as const;
 
 export const Button: ParentComponent<Props> = (props) => {
-  const [local, rest] = splitProps(props, ['variant', 'size', 'class']);
+  const [, rest] = splitProps(props, ['variant', 'size', 'class']);
 
-  const variant = local.variant ?? 'primary';
-  const size = local.size ?? 'md';
-  const className = local.class ?? '';
+  const variant = props.variant ?? 'primary';
+  const size = props.size ?? 'md';
 
   return (
     <button
       class={twMerge(
         'inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50',
-        className,
+        props.class,
         variantClasses[variant],
         sizeClasses[size],
       )}
