@@ -12,8 +12,7 @@ type Props = JSX.IntrinsicElements['input'] & {
 };
 
 /**
- * Text input field that users can type into. Various decorations can be
- * displayed in or around the field to communicate the entry requirements.
+ * Text input field that users can type into.
  * Ref: https://github.com/fabian-hiller/modular-forms/blob/main/playgrounds/solid/src/components/TextInput.tsx
  */
 export function TextInput(props: Props) {
@@ -29,9 +28,19 @@ export function TextInput(props: Props) {
   return (
     <div class="flex flex-col gap-1.5">
       <Show when={props.label}>
-        <Label for={props.name}>{props.label}</Label>
+        <Label for={props.name}>
+          {props.label}
+          <Show when={props.required}>
+            <span class="text-destructive">&nbsp;*</span>
+          </Show>
+        </Label>
       </Show>
-      <Input class={twMerge(props.class)} {...inputProps} id={props.name} value={getValue()} />
+      <Input
+        class={twMerge(props.class, props.error ? 'border-destructive' : '')}
+        {...inputProps}
+        id={props.name}
+        value={getValue()}
+      />
       <Show when={props.error}>
         <p class="text-sm text-destructive" id={`${props.name}-error`}>
           {props.error}
