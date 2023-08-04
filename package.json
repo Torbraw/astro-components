@@ -5,9 +5,9 @@
   "author": "@Torbraw",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Torbraw/astro-components.git"
+    "url": "git+https://github.com/Torbraw/ui-components.git"
   },
-  "homepage": "https://github.com/Torbraw/astro-components#readme",
+  "homepage": "https://github.com/Torbraw/ui-components#readme",
   "scripts": {
     "format": "prettier --plugin=prettier-plugin-astro --plugin=prettier-plugin-tailwindcss --write ./src/**/*.astro"
   },
