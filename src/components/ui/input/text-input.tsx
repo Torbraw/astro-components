@@ -1,5 +1,5 @@
 import { type JSX, createMemo, splitProps, Show } from 'solid-js';
-import { Input } from '@/components/ui/input/input;
+import { Input } from '@/components/ui/input/input';
 import { Label } from '@/components/ui/label/label';
 import { twMerge } from 'tailwind-merge';
 
