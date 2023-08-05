@@ -24,7 +24,7 @@ import Button from '@/components/ui/button/button.astro';
 <Button variant="secondary">Button</Button>
 ```
 
-Available variant: primary, secondary, destructive, outline
+Available variant: primary, secondary, destructive, outline, success, ghost
 
 ### Specify size
 

@@ -7,6 +7,7 @@ type Props = JSX.IntrinsicElements['input'] & {
   type: 'text' | 'email' | 'tel' | 'password' | 'url' | 'number' | 'date';
   name: string;
   value: string | number | undefined;
+  required?: boolean;
   label?: string;
   error?: string;
 };
@@ -36,7 +37,7 @@ export function TextInput(props: Props) {
         </Label>
       </Show>
       <Input
-        class={twMerge(props.class, props.error ? 'border-destructive' : '')}
+        class={twMerge(props.error ? 'border-destructive' : '', props.class)}
         {...inputProps}
         id={props.name}
         value={getValue()}

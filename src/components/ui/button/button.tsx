@@ -2,7 +2,7 @@ import { type ParentComponent, type ComponentProps, splitProps } from 'solid-js'
 import { twMerge } from 'tailwind-merge';
 
 type Props = ComponentProps<'button'> & {
-  variant?: 'primary' | 'secondary' | 'destructive' | 'outline' | 'success';
+  variant?: 'primary' | 'secondary' | 'destructive' | 'outline' | 'success' | 'ghost';
   size?: 'sm' | 'md' | 'lg' | 'icon';
 };
 
@@ -12,6 +12,7 @@ const variantClasses = {
   destructive: 'bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90',
   success: 'bg-success text-success-foreground shadow-sm hover:bg-success/90',
   outline: 'border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground',
+  ghost: 'hover:bg-accent hover:text-accent-foreground',
 } as const;
 
 const sizeClasses = {
@@ -31,9 +32,9 @@ export const Button: ParentComponent<Props> = (props) => {
     <button
       class={twMerge(
         'inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50',
-        props.class,
         variantClasses[variant],
         sizeClasses[size],
+        props.class,
       )}
       {...rest}
     >
