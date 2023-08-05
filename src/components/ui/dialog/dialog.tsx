@@ -97,7 +97,7 @@ const DialogContent: ParentComponent<ComponentProps<'div'>> = (props) => {
     <div class={twMerge('relative grid gap-4 p-6 ', props.class)} {...rest}>
       {props.children}
       <button
-        onClick={closeDialog}
+        onClick={() => closeDialog()}
         class="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
       >
         <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4">
