@@ -108,6 +108,7 @@ import Button from '@/components/ui/button/button';
 
 - You need to englobe your `Dialog` and `DialogTrigger` components with the `DialogRoot` component.
 - The `DialogTrigger` take a child component that can be any element.
+- You can also register a ref to the `Dialog` component to open/close it programmatically or listen to the `open` and `close` events.
 
 ### Other infos
 
