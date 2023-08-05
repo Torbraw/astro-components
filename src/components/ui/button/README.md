@@ -1,19 +1,20 @@
 # Button
 
-## Default
+## Astro
+
+### Default
 
 ```jsx
 ---
-import Button from '@/components/ui/button/button.astro'; // astro
-import { Button } from '@/components/ui/button/button'; // solidjs
+import Button from '@/components/ui/button/button.astro';
 ---
 
 <Button>Button</Button>
 ```
 
-Defaullt is primary variant and md size
+Default is primary variant and md size
 
-## Specify variant
+### Specify variant
 
 ```jsx
 ---
@@ -25,7 +26,7 @@ import Button from '@/components/ui/button/button.astro';
 
 Available variant: primary, secondary, destructive, outline
 
-## Specify size
+### Specify size
 
 ```jsx
 ---
@@ -36,3 +37,13 @@ import Button from '@/components/ui/button/button.astro';
 ```
 
 Available size: sm, md, lg, icon
+
+## Solidjs
+
+```jsx
+import { Button } from '@/components/ui/button/button';
+
+<Button>Button</Button>
+```
+
+Same properties as astro component also available
