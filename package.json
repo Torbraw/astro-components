@@ -7,15 +7,8 @@
     "type": "git",
     "url": "git+https://github.com/Torbraw/ui-components.git"
   },
-  "homepage": "https://github.com/Torbraw/ui-components#readme",
-  "scripts": {
-    "format": "prettier --plugin=prettier-plugin-astro --plugin=prettier-plugin-tailwindcss --write ./src/**/*.astro"
-  },
   "devDependencies": {
     "astro": "^2.9.0",
-    "prettier": "^3.0.0",
-    "prettier-plugin-astro": "^0.11.0",
-    "prettier-plugin-tailwindcss": "^0.4.1",
     "solid-js": "^1.7.8",
     "tailwind-merge": "^1.14.0",
     "tailwindcss-animate": "^1.0.6"
