@@ -106,7 +106,7 @@ const DialogContent: ParentComponent<ComponentProps<'div'>> = (props) => {
             fill="currentColor"
             fill-rule="evenodd"
             clip-rule="evenodd"
-          ></path>
+          />
         </svg>
       </button>
     </div>
