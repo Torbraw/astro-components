@@ -23,10 +23,10 @@ const sizeClasses = {
 } as const;
 
 export const Button: ParentComponent<Props> = (props) => {
-  const [, rest] = splitProps(props, ['variant', 'size', 'class']);
+  const [local, rest] = splitProps(props, ['variant', 'size', 'class', 'children']);
 
-  const variant = props.variant ?? 'primary';
-  const size = props.size ?? 'md';
+  const variant = local.variant ?? 'primary';
+  const size = local.size ?? 'md';
 
   return (
     <button
@@ -34,11 +34,11 @@ export const Button: ParentComponent<Props> = (props) => {
         'inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50',
         variantClasses[variant],
         sizeClasses[size],
-        props.class,
+        local.class,
       )}
       {...rest}
     >
-      {props.children}
+      {local.children}
     </button>
   );
 };

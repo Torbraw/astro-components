@@ -41,7 +41,7 @@ const DialogRoot: ParentComponent = (props) => {
 
 const Dialog: ParentComponent<ComponentProps<'dialog'>> = (props) => {
   const context = useDialogContext();
-  const [, rest] = splitProps(props, ['class']);
+  const [local, rest] = splitProps(props, ['class', 'children']);
 
   onMount(() => {
     const dialogRef = context.dialogRef();
@@ -73,18 +73,18 @@ const Dialog: ParentComponent<ComponentProps<'dialog'>> = (props) => {
       data-closing="false"
       class={twMerge(
         'left-[50%] top-[50%] m-0 w-full max-w-lg translate-x-[-50%] translate-y-[-50%] border bg-background text-primary shadow-lg duration-200 backdrop:bg-background/80 backdrop:backdrop-blur-sm open:animate-in open:fade-in-0 open:zoom-in-95 open:slide-in-from-left-1/2 open:slide-in-from-top-[48%] open:backdrop:animate-in open:backdrop:fade-out-0 data-[closing=true]:animate-out data-[closing=true]:fade-out-0 data-[closing=true]:zoom-out-95 data-[closing=true]:slide-out-to-left-1/2 data-[closing=true]:slide-out-to-top-[48%] sm:rounded-lg',
-        props.class,
+        local.class,
       )}
       {...rest}
     >
-      {props.children}
+      {local.children}
     </dialog>
   );
 };
 
 const DialogContent: ParentComponent<ComponentProps<'div'>> = (props) => {
   const context = useDialogContext();
-  const [, rest] = splitProps(props, ['class']);
+  const [local, rest] = splitProps(props, ['class', 'children']);
 
   const closeDialog = () => {
     const dialogRef = context.dialogRef();
@@ -94,8 +94,8 @@ const DialogContent: ParentComponent<ComponentProps<'div'>> = (props) => {
   };
 
   return (
-    <div class={twMerge('relative grid gap-4 p-6 ', props.class)} {...rest}>
-      {props.children}
+    <div class={twMerge('relative grid gap-4 p-6 ', local.class)} {...rest}>
+      {local.children}
       <button
         onClick={() => closeDialog()}
         class="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
@@ -127,41 +127,41 @@ const DialogTrigger: ParentComponent = (props) => {
 };
 
 const DialogHeader: ParentComponent<ComponentProps<'div'>> = (props) => {
-  const [, rest] = splitProps(props, ['class']);
+  const [local, rest] = splitProps(props, ['class', 'children']);
 
   return (
-    <div class={twMerge('flex flex-col space-y-1.5 text-center sm:text-left', props.class)} {...rest}>
-      {props.children}
+    <div class={twMerge('flex flex-col space-y-1.5 text-center sm:text-left', local.class)} {...rest}>
+      {local.children}
     </div>
   );
 };
 
 const DialogTitle: ParentComponent<ComponentProps<'h2'>> = (props) => {
-  const [, rest] = splitProps(props, ['class']);
+  const [local, rest] = splitProps(props, ['class', 'children']);
 
   return (
-    <h2 class={twMerge('text-lg font-semibold leading-none tracking-tight', props.class)} {...rest}>
-      {props.children}
+    <h2 class={twMerge('text-lg font-semibold leading-none tracking-tight', local.class)} {...rest}>
+      {local.children}
     </h2>
   );
 };
 
 const DialogDescription: ParentComponent<ComponentProps<'p'>> = (props) => {
-  const [, rest] = splitProps(props, ['class']);
+  const [local, rest] = splitProps(props, ['class', 'children']);
 
   return (
-    <p class={twMerge('text-sm text-muted-foreground', props.class)} {...rest}>
-      {props.children}
+    <p class={twMerge('text-sm text-muted-foreground', local.class)} {...rest}>
+      {local.children}
     </p>
   );
 };
 
 const DialogFooter: ParentComponent<ComponentProps<'div'>> = (props) => {
-  const [, rest] = splitProps(props, ['class']);
+  const [local, rest] = splitProps(props, ['class', 'children']);
 
   return (
-    <div class={twMerge('flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2', props.class)} {...rest}>
-      {props.children}
+    <div class={twMerge('flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2', local.class)} {...rest}>
+      {local.children}
     </div>
   );
 };
