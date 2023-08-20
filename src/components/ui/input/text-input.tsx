@@ -18,33 +18,33 @@ type Props = JSX.IntrinsicElements['input'] & {
  */
 export function TextInput(props: Props) {
   // Split input element props
-  const [, inputProps] = splitProps(props, ['class', 'value', 'error', 'name', 'label']);
+  const [local, inputProps] = splitProps(props, ['class', 'value', 'error', 'name', 'label', 'required']);
 
   // Create memoized value
   const getValue = createMemo<string | number | undefined>(
-    (prevValue) => (props.value === undefined ? '' : !Number.isNaN(props.value) ? props.value : prevValue),
+    (prevValue) => (local.value === undefined ? '' : !Number.isNaN(local.value) ? local.value : prevValue),
     '',
   );
 
   return (
     <div class="flex flex-col gap-1.5">
-      <Show when={props.label}>
-        <Label for={props.name}>
-          {props.label}
-          <Show when={props.required}>
+      <Show when={local.label}>
+        <Label for={local.name}>
+          {local.label}
+          <Show when={local.required}>
             <span class="text-destructive">&nbsp;*</span>
           </Show>
         </Label>
       </Show>
       <Input
-        class={twMerge(props.error ? 'border-destructive' : '', props.class)}
+        class={twMerge(local.error ? 'border-destructive' : '', local.class)}
         {...inputProps}
-        id={props.name}
+        id={local.name}
         value={getValue()}
       />
-      <Show when={props.error}>
-        <p class="text-sm text-destructive" id={`${props.name}-error`}>
-          {props.error}
+      <Show when={local.error}>
+        <p class="text-sm text-destructive" id={`${local.name}-error`}>
+          {local.error}
         </p>
       </Show>
     </div>
