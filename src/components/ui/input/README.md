@@ -68,3 +68,28 @@ import { TextInput } from '@/components/ui/input/text-input';
   )}
 </Field>
 ```
+
+## File Input
+
+This input is meant to be used in a [modular form](https://modularforms.dev/) with solidjs for file inputs.  
+It needs the `input.tsx` and `label.tsx` components.
+
+```jsx
+import { FileInput } from '@/components/ui/input/file-input';
+
+{/* Field is a modular form component. ref: https://modularforms.dev/solid/guides/add-fields-to-form */}
+<Field name="image" type="File">
+  {(field, props) => (
+    <>
+      <FileInput
+        {...props}
+        name={field.name}
+        error={field.error}
+        type="File"
+        label="Image"
+        accept=".jpg,.png"
+      />
+    </>
+  )}
+</Field>
+```
