@@ -55,16 +55,15 @@ import { TextInput } from '@/components/ui/input/text-input';
 {/* Field is a modular form component. ref: https://modularforms.dev/solid/guides/add-fields-to-form */}
 <Field name="name">
   {(field, props) => (
-    <>
-      <TextInput
-        {...props}
-        name={field.name}
-        value={field.value}
-        error={field.error}
-        type="text"
-        label="Name"
-      />
-    </>
+    <TextInput
+      {...props}
+      name={field.name}
+      value={field.value}
+      error={field.error}
+      required={true}
+      type="text"
+      label="Name"
+    />
   )}
 </Field>
 ```
@@ -80,16 +79,14 @@ import { FileInput } from '@/components/ui/input/file-input';
 {/* Field is a modular form component. ref: https://modularforms.dev/solid/guides/add-fields-to-form */}
 <Field name="image" type="File">
   {(field, props) => (
-    <>
-      <FileInput
-        {...props}
-        name={field.name}
-        error={field.error}
-        type="File"
-        label="Image"
-        accept=".jpg,.png"
-      />
-    </>
+    <FileInput
+      {...props}
+      name={field.name}
+      error={field.error}
+      type="File"
+      label="Image"
+      accept=".jpg,.png"
+    />
   )}
 </Field>
 ```
