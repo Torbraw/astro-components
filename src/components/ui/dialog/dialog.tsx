@@ -9,11 +9,13 @@ import {
   useContext,
   createSignal,
   onMount,
+  Show,
 } from 'solid-js';
 import { twMerge } from 'tailwind-merge';
 
 type DialogContextValue = {
   dialogRef: Accessor<HTMLDialogElement | undefined>;
+  isAlert: Accessor<boolean>;
   setDialogRef: Setter<HTMLDialogElement | undefined>;
 };
 
@@ -29,15 +31,22 @@ const useDialogContext = () => {
   return context;
 };
 
-const DialogRoot: ParentComponent = (props) => {
+type DialogRootProps = {
+  isAlert?: boolean;
+};
+const DialogRoot: ParentComponent<DialogRootProps> = (props) => {
+  const [local, _rest] = splitProps(props, ['isAlert', 'children']);
+
   const [dialogRef, setDialogRef] = createSignal<HTMLDialogElement | undefined>(undefined);
+  const [isAlert] = createSignal(local.isAlert ?? false);
 
   const context: DialogContextValue = {
     dialogRef,
     setDialogRef,
+    isAlert,
   };
 
-  return <DialogContext.Provider value={context}>{props.children}</DialogContext.Provider>;
+  return <DialogContext.Provider value={context}>{local.children}</DialogContext.Provider>;
 };
 
 const Dialog: ParentComponent<ComponentProps<'dialog'>> = (props) => {
@@ -55,11 +64,13 @@ const Dialog: ParentComponent<ComponentProps<'dialog'>> = (props) => {
         }
       });
 
-      dialogRef.addEventListener('click', (event) => {
-        if (event.target === dialogRef) {
-          dialogRef.dataset.closing = 'true';
-        }
-      });
+      if (!context.isAlert()) {
+        dialogRef.addEventListener('click', (event) => {
+          if (event.target === dialogRef) {
+            dialogRef.dataset.closing = 'true';
+          }
+        });
+      }
 
       dialogRef.addEventListener('cancel', (event) => {
         event.preventDefault();
@@ -101,7 +112,9 @@ const DialogContent: ParentComponent<ComponentProps<'div'>> = (props) => {
         onClick={() => closeDialog()}
         class="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
       >
-        <CloseIcon width="15" height="15" class="h-4 w-4" />
+        <Show when={!context.isAlert()}>
+          <CloseIcon width="15" height="15" class="h-4 w-4" />
+        </Show>
       </button>
     </div>
   );

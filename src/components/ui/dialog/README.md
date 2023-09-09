@@ -71,7 +71,7 @@ import {
 import Label from '@/components/ui/label/label';
 import Button from '@/components/ui/button/button';
 
-<DialogRoot>
+<DialogRoot isAlert={false}>
   <Dialog>
     <DialogContent>
       <DialogHeader>
@@ -109,6 +109,7 @@ import Button from '@/components/ui/button/button';
 - You need to englobe your `Dialog` and `DialogTrigger` components with the `DialogRoot` component.
 - The `DialogTrigger` take a child component that can be any element.
 - You can also register a ref to the `Dialog` component to open/close it programmatically or listen to the `open` and `close` events.
+- The `isAlert` property is optional and false by default, if true it will render the dialog as an alert dialog (meaning you cannot close it by clicking outside and without the "close" button).
 
 ### Other infos
 
