@@ -25,7 +25,7 @@ export const CheckboxInput: Component<Props> = (props) => {
         </Label>
       </Show>
       <div class="flex h-9 items-center">
-        <Checkbox {...rest} id={local.name} checked={local.checked || false} onCheckedChange={local.onCheckedChange} />
+        <Checkbox {...rest} id={local.name} checked={local.checked ?? false} onCheckedChange={local.onCheckedChange} />
       </div>
       <Show when={local.error}>
         <p class="text-sm text-destructive" id={`${local.name}-error`}>
