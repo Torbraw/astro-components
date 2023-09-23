@@ -100,7 +100,7 @@ export const CheckIcon: ParentComponent<ComponentProps<'svg'>> = (props) => {
         fill="currentColor"
         fill-rule="evenodd"
         clip-rule="evenodd"
-      ></path>
+      />
     </svg>
   );
 };
@@ -115,7 +115,7 @@ export const SearchIcon: ParentComponent<ComponentProps<'svg'>> = (props) => {
         fill="currentColor"
         fill-rule="evenodd"
         clip-rule="evenodd"
-      ></path>
+      />
     </svg>
   );
 };
@@ -143,19 +143,19 @@ export const GoogleIcon: ParentComponent<ComponentProps<'svg'>> = (props) => {
       <path
         fill="#FFC107"
         d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"
-      ></path>
+      />
       <path
         fill="#FF3D00"
         d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"
-      ></path>
+      />
       <path
         fill="#4CAF50"
         d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"
-      ></path>
+      />
       <path
         fill="#1976D2"
         d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"
-      ></path>
+      />
     </svg>
   );
 };
@@ -165,10 +165,85 @@ export const MicrosoftIcon: ParentComponent<ComponentProps<'svg'>> = (props) => 
 
   return (
     <svg class={local.class} {...rest} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
-      <path fill="#ff5722" d="M6 6H22V22H6z" transform="rotate(-180 14 14)"></path>
-      <path fill="#4caf50" d="M26 6H42V22H26z" transform="rotate(-180 34 14)"></path>
-      <path fill="#ffc107" d="M26 26H42V42H26z" transform="rotate(-180 34 34)"></path>
-      <path fill="#03a9f4" d="M6 26H22V42H6z" transform="rotate(-180 14 34)"></path>
+      <path fill="#ff5722" d="M6 6H22V22H6z" transform="rotate(-180 14 14)" />
+      <path fill="#4caf50" d="M26 6H42V22H26z" transform="rotate(-180 34 14)" />
+      <path fill="#ffc107" d="M26 26H42V42H26z" transform="rotate(-180 34 34)" />
+      <path fill="#03a9f4" d="M6 26H22V42H6z" transform="rotate(-180 14 34)" />
+    </svg>
+  );
+};
+
+export const ListIcon: ParentComponent<ComponentProps<'svg'>> = (props) => {
+  const [local, rest] = splitProps(props, ['class']);
+
+  return (
+    <svg class={local.class} {...rest} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path
+        fill="currentColor"
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M8 4H21V6H8V4ZM4.5 6.5C3.67157 6.5 3 5.82843 3 5C3 4.17157 3.67157 3.5 4.5 3.5C5.32843 3.5 6 4.17157 6 5C6 5.82843 5.32843 6.5 4.5 6.5ZM4.5 13.5C3.67157 13.5 3 12.8284 3 12C3 11.1716 3.67157 10.5 4.5 10.5C5.32843 10.5 6 11.1716 6 12C6 12.8284 5.32843 13.5 4.5 13.5ZM4.5 20.4C3.67157 20.4 3 19.7284 3 18.9C3 18.0716 3.67157 17.4 4.5 17.4C5.32843 17.4 6 18.0716 6 18.9C6 19.7284 5.32843 20.4 4.5 20.4ZM8 11H21V13H8V11ZM8 18H21V20H8V18Z"
+      />
+    </svg>
+  );
+};
+
+export const GroupIcon: ParentComponent<ComponentProps<'svg'>> = (props) => {
+  const [local, rest] = splitProps(props, ['class']);
+
+  return (
+    <svg class={local.class} {...rest} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path
+        fill="currentColor"
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M2 22C2 17.5817 5.58172 14 10 14C14.4183 14 18 17.5817 18 22H16C16 18.6863 13.3137 16 10 16C6.68629 16 4 18.6863 4 22H2ZM10 13C6.685 13 4 10.315 4 7C4 3.685 6.685 1 10 1C13.315 1 16 3.685 16 7C16 10.315 13.315 13 10 13ZM10 11C12.21 11 14 9.21 14 7C14 4.79 12.21 3 10 3C7.79 3 6 4.79 6 7C6 9.21 7.79 11 10 11ZM18.2837 14.7028C21.0644 15.9561 23 18.752 23 22H21C21 19.564 19.5483 17.4671 17.4628 16.5271L18.2837 14.7028ZM17.5962 3.41321C19.5944 4.23703 21 6.20361 21 8.5C21 11.3702 18.8042 13.7252 16 13.9776V11.9646C17.6967 11.7222 19 10.264 19 8.5C19 7.11935 18.2016 5.92603 17.041 5.35635L17.5962 3.41321Z"
+      />
+    </svg>
+  );
+};
+
+export const PriceTagIcon: ParentComponent<ComponentProps<'svg'>> = (props) => {
+  const [local, rest] = splitProps(props, ['class']);
+
+  return (
+    <svg class={local.class} {...rest} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path
+        fill="currentColor"
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M10.9042 2.1001L20.8037 3.51431L22.2179 13.4138L13.0255 22.6062C12.635 22.9967 12.0019 22.9967 11.6113 22.6062L1.71184 12.7067C1.32131 12.3162 1.32131 11.683 1.71184 11.2925L10.9042 2.1001ZM11.6113 4.22142L3.83316 11.9996L12.3184 20.4849L20.0966 12.7067L19.036 5.28208L11.6113 4.22142ZM13.7327 10.5854C12.9516 9.80433 12.9516 8.538 13.7327 7.75695C14.5137 6.9759 15.78 6.9759 16.5611 7.75695C17.3421 8.538 17.3421 9.80433 16.5611 10.5854C15.78 11.3664 14.5137 11.3664 13.7327 10.5854Z"
+      />
+    </svg>
+  );
+};
+
+export const OpenArmIcon: ParentComponent<ComponentProps<'svg'>> = (props) => {
+  const [local, rest] = splitProps(props, ['class']);
+
+  return (
+    <svg class={local.class} {...rest} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path
+        fill="currentColor"
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M18.0014 17V22H16.0014V17C16.0014 12.5487 18.6454 8.71498 22.4485 6.98352L23.2763 8.8047C20.1646 10.2213 18.0014 13.3581 18.0014 17ZM8.00143 17V22H6.00143V17C6.00143 13.3581 3.8382 10.2213 0.726562 8.8047L1.55437 6.98352C5.35749 8.71498 8.00143 12.5487 8.00143 17ZM12.0014 12C9.24 12 7.00143 9.76142 7.00143 7C7.00143 4.23858 9.24 2 12.0014 2C14.7628 2 17.0014 4.23858 17.0014 7C17.0014 9.76142 14.7628 12 12.0014 12ZM12.0014 10C13.6583 10 15.0014 8.65685 15.0014 7C15.0014 5.34315 13.6583 4 12.0014 4C10.3446 4 9.00142 5.34315 9.00142 7C9.00142 8.65685 10.3446 10 12.0014 10Z"
+      ></path>
+    </svg>
+  );
+};
+
+export const DoorOpenIcon: ParentComponent<ComponentProps<'svg'>> = (props) => {
+  const [local, rest] = splitProps(props, ['class']);
+
+  return (
+    <svg class={local.class} {...rest} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path
+        fill="currentColor"
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M1.99805 21.0003V19.0003L3.99805 19.0001V4.83489C3.99805 4.35161 4.34367 3.93748 4.81916 3.85102L14.2907 2.12892C14.6167 2.06965 14.9291 2.28589 14.9884 2.61191C14.9948 2.64733 14.998 2.68325 14.998 2.71924V4.00014L18.998 4.00032C19.5503 4.00032 19.998 4.44803 19.998 5.00032V19.0001L21.998 19.0003V21.0003H17.998V6.00032L14.998 6.00014V21.0003H1.99805ZM12.998 4.39674L5.99805 5.66947V19.0003H12.998V4.39674ZM11.998 11.0003V13.0003H9.99805V11.0003H11.998Z"
+      ></path>
     </svg>
   );
 };
