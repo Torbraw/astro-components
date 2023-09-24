@@ -1,23 +1,12 @@
 ---
-import { twMerge } from 'tailwind-merge';
-import type { HTMLAttributes } from 'astro/types';
 import { DayIcon, NightIcon } from '@/components/common/icons';
-
-type Props = HTMLAttributes<'button'>;
-const { class: className = '' } = Astro.props;
+import { Button } from '@/components/ui/button/button';
 ---
 
-<button
-  id="theme-toggle"
-  class={twMerge(
-    'inline-flex h-9 w-9 items-center justify-center rounded-md px-0 py-2 hover:bg-secondary hover:text-secondary-foreground',
-    className,
-  )}
-  {...Astro.props}
->
+<Button variant="ghost" size="icon" id="theme-toggle" class="transition-none">
   <DayIcon class="block h-6 w-6 dark:hidden" />
   <NightIcon class="hidden h-6 w-6 dark:block" />
-</button>
+</Button>
 
 <script is:inline>
   const theme = localStorage.getItem('theme') ?? 'light';
