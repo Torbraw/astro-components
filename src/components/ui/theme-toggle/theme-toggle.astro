@@ -22,7 +22,6 @@ const { class: className = '', ...rest } = Astro.props;
   const themeToggle = document.querySelector('#theme-toggle');
 
   themeToggle.addEventListener('click', () => {
-    const html = document.querySelector('html');
     html.classList.toggle('dark');
     localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
   });
