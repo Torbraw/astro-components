@@ -1,28 +1,31 @@
 # ui-components
 
-Library of astro & solidjs + tailwindcss components that I use on my projects, heavily inspired by [shadcn/ui](https://ui.shadcn.com).  
-This is not mean to be a complete port of shadcn/ui, I only port the components I need for my projects and I sometimes tweak them if I need to.
+Library of astro & solidjs + tailwindcss components that I use on my projects. Some components are taken from the solid-js community port of [shadcn/ui](https://ui.shadcn.com/), [solid-ui](https://github.com/sek-consulting/solid-ui).
 
 ## How to use
 
 You are free to use those components if you want, you simply need to copy and paste the components you want from the `src` directory and paste them into your own project.  
-You have a README.md file in each component directory that explains how to use them.
+You have a README.md file in each component directory that explains how to use them if it's a custom component, otherwise you can refer to the original documentation of the [shadcn/ui](https://ui.shadcn.com/docs/components/accordion) component.
 
-You will need to add `applyBaseStyles: false` to your tailwind ingreration in your `astro.config.mjs` file and those dependencies:
+You will need to add `applyBaseStyles: false` to your tailwind ingreration in your `astro.config.mjs` file, define a custom paths in your tsconfig.json that map `@/*` to the root of your project and those dependencies:
 
 ```bash
-npm i @astrojs/tailwind tailwind-merge
-npm i -D tailwindcss tailwindcss-animate
+npm i @astrojs/tailwind tailwind-merge tailwindcss-animate solid-js @astrojs/solid-js class-variance-authority clsx
+npm i -D tailwindcss
 
-# If using solidjs
-npm i solid-js @astrojs/solid-js
+# If using a component that requires a kobalte primitive
+npm i @kobalte/core
+
+# If using a component that requires modularforms
+npm i @modular-forms/solid
 ```
 
 You will also need all the files in the sections below.
 
 ## Global CSS & Tailwind Config
 
-You will need a tailwind config file and a global css file that contains the variables in the exemple below. For informations about each variable, you can check the [shadcn/ui](https://ui.shadcn.com/docs/theming#list-of-variables) theming documentation.
+You will need a tailwind config file and a global css file that contains the variables in the exemple below. For informations about each variable, you can check the [shadcn/ui](https://ui.shadcn.com/docs/theming#list-of-variables) theming documentation.  
+Don't forget to include the global.css file in your default astro layout or main entry point.
 
 ```css
 @tailwind base;
@@ -31,75 +34,47 @@ You will need a tailwind config file and a global css file that contains the var
 
 @layer base {
   :root {
-    color-scheme: light;
-
     --background: 0 0% 100%;
-    --foreground: 222.2 47.4% 11.2%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-
+    --foreground: 240 10% 3.9%;
     --card: 0 0% 100%;
-    --card-foreground: 222.2 47.4% 11.2%;
-
+    --card-foreground: 240 10% 3.9%;
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 47.4% 11.2%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 100% 50%;
-    --destructive-foreground: 222.2 47.4% 11.2%;
-
-    --success: 120 100% 50%;
-    --success-foreground: 222.2 47.4% 11.2%;
-
-    --ring: 215 20.2% 65.1%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 5.9% 10%;
   }
-
+ 
   .dark {
-    color-scheme: dark;
-    
-    --background: 224 71% 4%;
-    --foreground: 213 31% 91%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 1.2%;
-
-    --secondary: 222.2 47.4% 11.2%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 223 47% 11%;
-    --muted-foreground: 215.4 16.3% 56.9%;
-
-    --border: 216 34% 17%;
-    --input: 216 34% 17%;
-
-    --card: 224 71% 4%;
-    --card-foreground: 213 31% 91%;
-    
-    --popover: 224 71% 4%;
-    --popover-foreground: 213 31% 91%;
-
-    --accent: 216 34% 17%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 63% 31%;
-    --destructive-foreground: 210 40% 98%;
-
-    --success: 120 90% 35%;
-    --success-foreground: 210 40% 98%;
-
-    --ring: 216 34% 17%;
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
   }
 }
 
@@ -109,21 +84,23 @@ You will need a tailwind config file and a global css file that contains the var
   }
   body {
     @apply bg-background text-foreground;
-    font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
 ```
 
 ```js
-import tailwindcssAnimate from "tailwindcss-animate";
-
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ["class"],
-  content: [
-    './src/**/*.{astro,html,js,jsx,md,mdx,ts,tsx,vue}'
-    ],
+  content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
+    container: {
+      center: true,
+      padding: "2rem",
+      screens: {
+        "2xl": "1400px",
+      },
+    },
     extend: {
       colors: {
         border: "hsl(var(--border))",
@@ -139,21 +116,9 @@ module.exports = {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
         },
-        card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
-        },
-        popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
-        },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
-        },
-        success: {
-          DEFAULT: "hsl(var(--success))",
-          foreground: "hsl(var(--success-foreground))",
         },
         muted: {
           DEFAULT: "hsl(var(--muted))",
@@ -163,24 +128,44 @@ module.exports = {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
         },
-      }
+        popover: {
+          DEFAULT: "hsl(var(--popover))",
+          foreground: "hsl(var(--popover-foreground))",
+        },
+        card: {
+          DEFAULT: "hsl(var(--card))",
+          foreground: "hsl(var(--card-foreground))",
+        },
+      },
+      keyframes: {
+        "accordion-down": {
+          from: { height: 0 },
+          to: { height: "var(--radix-accordion-content-height)" },
+        },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: 0 },
+        },
+      },
+      animation: {
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
+      },
     },
   },
-  plugins: [tailwindcssAnimate],
+  plugins: [require("tailwindcss-animate")],
 }
 ```
 
-## Tsconfig
+## Utils file
 
-You will need to have the following in your `tsconfig.json` file to import components, put your components in a `components/ui` directory.
+You will need a util file that contains the following code and located at `src/lib/utils.ts`:
 
-```json
-{
-  "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["./*"]
-    }
-  }
+```jsx
+import { type ClassValue, clsx } from "clsx"
+import { twMerge } from "tailwind-merge"
+ 
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs))
 }
 ```
