@@ -1,32 +1,6 @@
 # Input
 
-## Astro
-
-### Default
-
-```jsx
----
-import Input from '@/components/ui/input/input.astro';
----
-
-<Input type="text" placeholder="Email" id="email" />
-```
-
-### With Label
-
-```jsx
----
-import Label from '@/components/ui/label/label.astro';
-import Input from '@/components/ui/input/input.astro';
----
-
-<Label for="email">Label</Label>
-<Input type="text" placeholder="Email" id="email" />
-```
-
-## Solidjs
-
-### Default
+## Default
 
 ```jsx
 import { Input } from '@/components/ui/input/input';
@@ -34,7 +8,7 @@ import { Input } from '@/components/ui/input/input';
 <Input type="text" placeholder="Email" id="email" />
 ```
 
-### With Label
+## With Label
 
 ```jsx
 import { Input } from '@/components/ui/input/input';
