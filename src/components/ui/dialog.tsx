@@ -11,7 +11,7 @@ import {
   onMount,
   Show,
 } from 'solid-js';
-import { twMerge } from 'tailwind-merge';
+import { cn } from '@/lib/utils';
 
 type DialogContextValue = {
   dialogRef: Accessor<HTMLDialogElement | undefined>;
@@ -83,7 +83,7 @@ const Dialog: ParentComponent<ComponentProps<'dialog'>> = (props) => {
     <dialog
       ref={context.setDialogRef}
       data-closing="false"
-      class={twMerge(
+      class={cn(
         'left-[50%] top-[50%] m-0 w-full max-w-lg translate-x-[-50%] translate-y-[-50%] border bg-background text-primary shadow-lg duration-200 backdrop:bg-background/80 backdrop:backdrop-blur-sm open:animate-in open:fade-in-0 open:zoom-in-95 open:slide-in-from-left-1/2 open:slide-in-from-top-[48%] open:backdrop:animate-in open:backdrop:fade-out-0 data-[closing=true]:animate-out data-[closing=true]:fade-out-0 data-[closing=true]:zoom-out-95 data-[closing=true]:slide-out-to-left-1/2 data-[closing=true]:slide-out-to-top-[48%] sm:rounded-lg',
         local.class,
       )}
@@ -106,7 +106,7 @@ const DialogContent: ParentComponent<ComponentProps<'div'>> = (props) => {
   };
 
   return (
-    <div class={twMerge('relative grid gap-4 p-6 ', local.class)} {...rest}>
+    <div class={cn('relative grid gap-4 p-6 ', local.class)} {...rest}>
       {local.children}
       <button
         onClick={() => closeDialog()}
@@ -137,7 +137,7 @@ const DialogHeader: ParentComponent<ComponentProps<'div'>> = (props) => {
   const [local, rest] = splitProps(props, ['class', 'children']);
 
   return (
-    <div class={twMerge('flex flex-col space-y-1.5 text-center sm:text-left', local.class)} {...rest}>
+    <div class={cn('flex flex-col space-y-1.5 text-center sm:text-left', local.class)} {...rest}>
       {local.children}
     </div>
   );
@@ -147,7 +147,7 @@ const DialogTitle: ParentComponent<ComponentProps<'h2'>> = (props) => {
   const [local, rest] = splitProps(props, ['class', 'children']);
 
   return (
-    <h2 class={twMerge('text-lg font-semibold leading-none tracking-tight', local.class)} {...rest}>
+    <h2 class={cn('text-lg font-semibold leading-none tracking-tight', local.class)} {...rest}>
       {local.children}
     </h2>
   );
@@ -157,7 +157,7 @@ const DialogDescription: ParentComponent<ComponentProps<'p'>> = (props) => {
   const [local, rest] = splitProps(props, ['class', 'children']);
 
   return (
-    <p class={twMerge('text-sm text-muted-foreground', local.class)} {...rest}>
+    <p class={cn('text-sm text-muted-foreground', local.class)} {...rest}>
       {local.children}
     </p>
   );
@@ -167,7 +167,7 @@ const DialogFooter: ParentComponent<ComponentProps<'div'>> = (props) => {
   const [local, rest] = splitProps(props, ['class', 'children']);
 
   return (
-    <div class={twMerge('flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2', local.class)} {...rest}>
+    <div class={cn('flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2', local.class)} {...rest}>
       {local.children}
     </div>
   );

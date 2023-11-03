@@ -1,6 +1,6 @@
 import { CheckIcon } from '@/components/common/icons';
 import { splitProps, type Component, type ComponentProps, Show } from 'solid-js';
-import { twMerge } from 'tailwind-merge';
+import { cn } from '@/lib/utils';
 
 type Props = {
   checked: boolean;
@@ -14,7 +14,7 @@ export const Checkbox: Component<Props> = (props) => {
       data-checked={local.checked}
       onClick={() => local.onCheckedChange(!local.checked)}
       type="button"
-      class={twMerge(
+      class={cn(
         'peer h-4 w-4 shrink-0 rounded-sm border border-primary shadow focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 data-[checked=true]:bg-primary data-[checked=true]:text-primary-foreground',
         local.class,
       )}

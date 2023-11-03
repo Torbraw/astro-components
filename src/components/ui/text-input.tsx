@@ -1,7 +1,7 @@
 import { type JSX, createMemo, splitProps, Show } from 'solid-js';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { twMerge } from 'tailwind-merge';
+import { cn } from '@/lib/utils';
 
 type Props = JSX.IntrinsicElements['input'] & {
   type: 'text' | 'email' | 'tel' | 'password' | 'url' | 'number' | 'date';
@@ -37,7 +37,7 @@ export function TextInput(props: Props) {
         </Label>
       </Show>
       <Input
-        class={twMerge(local.error ? 'border-destructive' : '', local.class)}
+        class={cn(local.error ? 'border-destructive' : '', local.class)}
         {...inputProps}
         id={local.name}
         value={getValue()}
