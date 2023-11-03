@@ -1,7 +1,7 @@
 ---
 import { twMerge } from 'tailwind-merge';
 import { DayIcon, NightIcon } from '@/components/common/icons';
-import { Button } from '@/components/ui/button/button';
+import { Button } from '@/components/ui/button';
 import type { ComponentProps } from 'solid-js';
 
 type Props = Omit<ComponentProps<'button'>, 'classList'>;
@@ -26,3 +26,4 @@ const { class: className = '', ...rest } = Astro.props;
     localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
   });
 </script>
+@/components/ui/button

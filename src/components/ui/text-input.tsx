@@ -1,6 +1,6 @@
 import { type JSX, createMemo, splitProps, Show } from 'solid-js';
-import { Input } from '@/components/ui/input/input';
-import { Label } from '@/components/ui/label/label';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
 import { twMerge } from 'tailwind-merge';
 
 type Props = JSX.IntrinsicElements['input'] & {

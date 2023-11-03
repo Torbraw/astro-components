@@ -5,7 +5,7 @@ Library of astro & solidjs + tailwindcss components that I use on my projects. S
 ## How to use
 
 You are free to use those components if you want, you simply need to copy and paste the components you want from the `src` directory and paste them into your own project.  
-You have a README.md file in each component directory that explains how to use them if it's a custom component, otherwise you can refer to the original documentation of the [shadcn/ui](https://ui.shadcn.com/docs/components/accordion) component.
+You have a README.md file that explains how to use them if it's a custom component, otherwise you can refer to the original documentation of the [shadcn/ui](https://ui.shadcn.com/docs/components/accordion) component.
 
 You will need to add `applyBaseStyles: false` to your tailwind ingreration in your `astro.config.mjs` file, define a custom paths in your tsconfig.json that map `@/*` to the root of your project and those dependencies:
 

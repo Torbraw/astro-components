@@ -1,5 +1,5 @@
 import { splitProps, type Component, Show, type ComponentProps } from 'solid-js';
-import { Label } from '@/components/ui/label/label';
+import { Label } from '@/components/ui/label';
 import { Checkbox } from './checkbox';
 
 type Props = {
