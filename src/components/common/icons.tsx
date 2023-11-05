@@ -311,7 +311,7 @@ export const MenuIcon: ParentComponent<ComponentProps<'svg'>> = (props) => {
 };
 
 export const CopyIcon: ParentComponent<ComponentProps<'svg'>> = (props) => {
-  const [local, rest] = splitProps(props, ['class', 'onClick']);
+  const [local, rest] = splitProps(props, ['class']);
 
   return (
     <svg class={local.class} {...rest} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
