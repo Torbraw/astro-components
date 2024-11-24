@@ -25,7 +25,7 @@ const CardTitle: ParentComponent<ComponentProps<'h3'>> = (props) => {
   const [local, rest] = splitProps(props, ['class', 'children']);
 
   return (
-    <h3 class={cn('font-semibold leading-none tracking-tight', local.class)} {...rest}>
+    <h3 class={cn('text-2xl font-semibold leading-none tracking-tight', local.class)} {...rest}>
       {local.children}
     </h3>
   );
