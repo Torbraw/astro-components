@@ -1,23 +1,32 @@
-import type { Component } from 'solid-js';
-import { splitProps } from 'solid-js';
-import { Select as SelectPrimitive } from '@kobalte/core';
-import { CheckIcon, ArrowDownIcon } from '@/components/common/icons';
-import { cn } from '@/lib/utils';
+import type { JSX, ValidComponent } from "solid-js";
+import { splitProps } from "solid-js";
+
+import type { PolymorphicProps } from "@kobalte/core/polymorphic";
+import * as SelectPrimitive from "@kobalte/core/select";
+
+import { cn } from "@/lib/utils";
+import { ArrowDownIcon, CheckIcon } from "@/components/common/icons";
 
 const Select = SelectPrimitive.Root;
 const SelectValue = SelectPrimitive.Value;
+const SelectHiddenSelect = SelectPrimitive.HiddenSelect;
 
-const SelectTrigger: Component<SelectPrimitive.SelectTriggerProps> = (props) => {
-  const [, rest] = splitProps(props, ['class', 'children']);
+type SelectTriggerProps<T extends ValidComponent = "button"> = SelectPrimitive.SelectTriggerProps<T> & {
+  class?: string | undefined;
+  children?: JSX.Element;
+};
+
+const SelectTrigger = <T extends ValidComponent = "button">(props: PolymorphicProps<T, SelectTriggerProps<T>>) => {
+  const [local, others] = splitProps(props as SelectTriggerProps, ["class", "children"]);
   return (
     <SelectPrimitive.Trigger
       class={cn(
-        'flex h-9 w-full items-center justify-between rounded-md border border-input bg-transparent px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50',
-        props.class,
+        "flex h-10 w-full items-center justify-between rounded-md border border-input bg-transparent px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
+        local.class,
       )}
-      {...rest}
+      {...others}
     >
-      {props.children}
+      {local.children}
       <SelectPrimitive.Icon>
         <ArrowDownIcon class="h-4 w-4 opacity-50" />
       </SelectPrimitive.Icon>
@@ -25,16 +34,20 @@ const SelectTrigger: Component<SelectPrimitive.SelectTriggerProps> = (props) => 
   );
 };
 
-const SelectContent: Component<SelectPrimitive.SelectContentProps> = (props) => {
-  const [, rest] = splitProps(props, ['class']);
+type SelectContentProps<T extends ValidComponent = "div"> = SelectPrimitive.SelectContentProps<T> & {
+  class?: string | undefined;
+};
+
+const SelectContent = <T extends ValidComponent = "div">(props: PolymorphicProps<T, SelectContentProps<T>>) => {
+  const [local, others] = splitProps(props as SelectContentProps, ["class"]);
   return (
     <SelectPrimitive.Portal>
       <SelectPrimitive.Content
         class={cn(
-          'relative z-50 min-w-[8rem] overflow-hidden rounded-md border bg-popover text-popover-foreground shadow-md animate-in fade-in-80',
-          props.class,
+          "relative z-50 min-w-32 overflow-hidden rounded-md border bg-popover text-popover-foreground shadow-md animate-in fade-in-80",
+          local.class,
         )}
-        {...rest}
+        {...others}
       >
         <SelectPrimitive.Listbox class="m-0 p-1" />
       </SelectPrimitive.Content>
@@ -42,24 +55,27 @@ const SelectContent: Component<SelectPrimitive.SelectContentProps> = (props) => 
   );
 };
 
-const SelectItem: Component<SelectPrimitive.SelectItemProps> = (props) => {
-  const [, rest] = splitProps(props, ['class', 'children']);
+type SelectItemProps<T extends ValidComponent = "li"> = SelectPrimitive.SelectItemProps<T> & {
+  class?: string | undefined;
+  children?: JSX.Element;
+};
+
+const SelectItem = <T extends ValidComponent = "li">(props: PolymorphicProps<T, SelectItemProps<T>>) => {
+  const [local, others] = splitProps(props as SelectItemProps, ["class", "children"]);
   return (
     <SelectPrimitive.Item
       class={cn(
-        'relative mt-0 flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
-        props.class,
+        "relative mt-0 flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-2 pr-8 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+        local.class,
       )}
-      {...rest}
+      {...others}
     >
-      <span class="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
-        <SelectPrimitive.ItemIndicator>
-          <CheckIcon class="h-4 w-4" />
-        </SelectPrimitive.ItemIndicator>
-      </span>
-      <SelectPrimitive.ItemLabel>{props.children}</SelectPrimitive.ItemLabel>
+      <SelectPrimitive.ItemIndicator class="absolute right-2 flex size-3.5 items-center justify-center">
+        <CheckIcon class="h-4 w-4" />
+      </SelectPrimitive.ItemIndicator>
+      <SelectPrimitive.ItemLabel>{local.children}</SelectPrimitive.ItemLabel>
     </SelectPrimitive.Item>
   );
 };
 
-export { Select, SelectValue, SelectTrigger, SelectContent, SelectItem };
+export { Select, SelectValue, SelectHiddenSelect, SelectTrigger, SelectContent, SelectItem };
